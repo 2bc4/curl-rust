@@ -12,6 +12,9 @@ readme = "README.md"
 autotests = true
 edition = "2018"
 
+[lints.clippy]
+all = "allow"
+
 [badges]
 travis-ci = { repository = "alexcrichton/curl-rust" }
 appveyor = { repository = "alexcrichton/curl-rust" }
@@ -34,9 +37,6 @@ windows-sys = { version = "0.48", features = ["Win32_System_LibraryLoader", "Win
 mio = "0.6"
 mio-extras = "2.0.3"
 anyhow = "1.0.31"
-
-[workspace]
-members = ["systest"]
 
 [features]
 default = ["ssl"]
