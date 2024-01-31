@@ -32,9 +32,6 @@ version = "0.8"
 optional = true
 features = ["no_log_capture"]
 
-[target.'cfg(all(unix, not(target_os = "macos")))'.dependencies]
-openssl-sys = { version = "0.9.64", optional = true }
-
 [target.'cfg(windows)'.dependencies]
 windows-sys = { version = "0.48", features = ["Win32_Networking_WinSock"] }
 
@@ -47,13 +44,13 @@ cc = "1.0"
 
 [features]
 default = ["ssl"]
-ssl = ["openssl-sys"]
+ssl = []
 http2 = ["libnghttp2-sys"]
 mesalink = []
 rustls = ["rustls-ffi"]
 static-curl = []
 windows-static-ssl = []
-static-ssl = ["openssl-sys/vendored"]
+static-ssl = []
 spnego = []
 force-system-lib-on-osx = []
 protocol-ftp = []
