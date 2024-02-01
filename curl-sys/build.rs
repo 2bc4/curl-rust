@@ -365,7 +365,6 @@ fn main() {
     // Configure platform-specific details.
     if windows {
         cfg.define("WIN32", None)
-            .define("USE_THREADS_WIN32", None)
             .define("HAVE_IOCTLSOCKET_FIONBIO", None)
             .define("USE_WINSOCK", None)
             .file("curl/lib/bufref.c")
@@ -400,8 +399,6 @@ fn main() {
             .define("HAVE_SOCKETPAIR", None)
             .define("HAVE_STRUCT_TIMEVAL", None)
             .define("HAVE_SYS_UN_H", None)
-            .define("USE_THREADS_POSIX", None)
-            .define("USE_UNIX_SOCKETS", None)
             .define("RECV_TYPE_ARG2", "void*")
             .define("RECV_TYPE_ARG3", "size_t")
             .define("RECV_TYPE_ARG4", "int")
