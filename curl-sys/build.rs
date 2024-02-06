@@ -253,6 +253,10 @@ fn main() {
         .define("HAVE_GETSOCKNAME", None)
         .warnings(false);
 
+    if !cfg!(feature = "verbose") {
+        cfg.define("CURL_DISABLE_VERBOSE_STRINGS", None);
+    }
+
     if cfg!(feature = "ntlm") {
         cfg.file("curl/lib/curl_des.c")
             .file("curl/lib/curl_endian.c")
